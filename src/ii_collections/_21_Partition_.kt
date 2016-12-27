@@ -10,7 +10,9 @@ fun example8() {
     negative == listOf(-4, -11)
 }
 
+fun Customer.needsFocus(): Boolean = orders.count { it.isDelivered } < orders.count { !it.isDelivered }
+
 fun Shop.getCustomersWithMoreUndeliveredOrdersThanDelivered(): Set<Customer> {
     // Return customers who have more undelivered orders than delivered
-    todoCollectionTask()
+    return customers.partition { it.needsFocus() }.first.toSet()
 }
