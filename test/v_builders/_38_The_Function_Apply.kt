@@ -1,4 +1,4 @@
-package v_builders.examples
+package v_builders
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
